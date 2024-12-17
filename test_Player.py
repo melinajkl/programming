@@ -8,7 +8,7 @@ class TestPlayer(unittest.TestCase):
         self.player = Player("Hero", 20)
 
     def test_initialization(self):
-        self.assertEqual(self.player.name, "Hero")
+        self.assertEqual(self.player._name, "Hero")
         self.assertEqual(self.player.strength, 20)
         self.assertEqual(self.player.health, 100)
 
@@ -46,7 +46,7 @@ class TestPlayer(unittest.TestCase):
 
     def test_properties_are_read_only(self):
         with self.assertRaises(AttributeError):
-            self.player.name = "Villain"
+            self.player._name = "Villain"
         with self.assertRaises(AttributeError):
             self.player.strength = 25
         with self.assertRaises(AttributeError):

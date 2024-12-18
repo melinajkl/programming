@@ -46,7 +46,7 @@ class TestPlayer(unittest.TestCase):
 
     def test_properties_are_read_only(self):
         with self.assertRaises(AttributeError):
-            self.player._name = "Villain"
+            self.player.name = "Villain"
         with self.assertRaises(AttributeError):
             self.player.strength = 25
         with self.assertRaises(AttributeError):

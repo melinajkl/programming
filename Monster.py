@@ -1,16 +1,36 @@
 import string
 
-
 class Monster:
     def __init__(self, name, strength, health):
-        self.name = name
-        self.strength = strength
-        self.health = health
+        self.__name = name
+        self.__strength = strength
+        self.__health = health
+        self._lost_health = 0
+        self.max__health = health
+    
+    @property
+    def lost_health(self):
+        return self._lost_health
+    
+    @property
+    def name(self):
+        return self.__name
+    
+    @property
+    def strength(self):
+        return self.__strength
+    
+    @property
+    def health(self):
+        return self.__health
         
     def __str__(self):
-        return "Monster " + self.name + " hast strength " + string(self.strength) + " and health " + string(self.strength) + ". "
+        return f"Monster {self.__name} has {self.__strength} strength and {self.__health} health."
     
     def take_damage(self, damage):
-        self.health -= damage
-        if self.health < 0:
-            self.health = 0
+        self.__health -= damage
+        self._lost_health += damage
+        if self.__health < 0:
+            self.__health = 0
+            self._lost_health = self.max__health
+

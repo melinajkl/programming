@@ -6,7 +6,7 @@ class Monster:
         self.__strength = strength
         self.__health = health
         self._lost_health = 0
-        self.max__health = health
+        self.max_health = health
     
     @property
     def lost_health(self):
@@ -32,5 +32,4 @@ class Monster:
         self._lost_health += damage
         if self.__health < 0:
             self.__health = 0
-            self._lost_health = self.max__health
-
+            self._lost_health = self.max_health

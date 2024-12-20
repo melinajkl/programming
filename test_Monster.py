@@ -1,5 +1,5 @@
 import unittest
-from Monster import Monster
+from dungeon.Monster import Monster
 
 
 class TestMonster(unittest.TestCase):

@@ -4,7 +4,7 @@ class Player:
     def __init__(self, name, strength):
         self._name = name
         self._health = 100
-        self._strength = int(strength)
+        self._strength = strength
     
     @property
     def name(self):
